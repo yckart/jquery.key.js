@@ -1,0 +1,34 @@
+body {
+    color: #444;
+    font: 120% sans-serif;
+    background: yellowgreen
+}
+
+a{color:yellowgreen; text-decoration: none}
+a:hover {text-decoration: underline;}
+
+.logo {
+    color: #fff;
+    font: 400 200px 'Numans', sans-serif;
+    text-align: center;
+}
+
+div {
+    margin:5% 20%;
+    padding:5% 10%;
+    background:#fff;
+    border-radius:6px
+}
+
+span {
+    padding: 3px 6px;
+    color: #fff;
+    background: yellowgreen;
+    border-radius: 6px
+}
+
+pre { 
+    width: 100%;
+    overflow: auto;
+    color: #666;
+}
