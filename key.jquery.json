@@ -1,0 +1,30 @@
+{
+    "name": "key",
+    "title": "jQuery Key",
+    "description": "The certainly simpliest shortcut key handler ever",
+    "keywords": [
+        "shortcut",
+        "key",
+        "keys",
+        "event",
+        "keydown",
+        "keyup"
+    ],
+    "version": "0.0.1",
+    "author": {
+        "name": "Yannick Albert",
+        "url": "https://github.com/yckart"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://yckart.com/mit/"
+        }
+    ],
+    "homepage": "https://github.com/yckart/jquery.key.js",
+    "bugs": "https://github.com/yckart/jquery.key.js/issues",
+    "docs": "https://github.com/yckart/jquery.key.js",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}

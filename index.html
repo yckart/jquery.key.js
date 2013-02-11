@@ -8,7 +8,7 @@
         <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Numans'>
         <link rel='stylesheet' type='text/css' href='style.css'>
 
-        <title>key.js | The certainly simpliest shortcut key event handler ever!</title>
+        <title>jquery.key.js | The certainly simpliest shortcut key event handler ever!</title>
     </head>
 
     <body>
@@ -17,46 +17,47 @@
         <div>
             <h2>Something about</h2>
             <p>key.js is certainly the simpliest shortcut key event handler ever. As simple as I say it is to use!</p>
-            <p>The "plugin" was written to be small, useful and nothing more.</p>
+            <p>This plugin was written to be small, useful and nothing more.</p>
         </div>
 
         <div>
             <h3>How to use</h3>
             <p>It is quite simple!</p>
 
-            <p><span>1st</span> Include the script:</p>
-            <pre><code>&lt;script src=&#39;key.js&#39;&gt;&lt;/script&gt;</code></pre>
+            <p><span>1st</span> Include jquery and <a href="https://github.com/yckart/jquery.key.js">key</a>:</p>
+            <pre><code>&lt;script src=&#39;jquery.js&#39;&gt;&lt;/script&gt;</code></pre>
+            <pre><code>&lt;script src=&#39;jquery.key.js&#39;&gt;&lt;/script&gt;</code></pre>
 
-            <p><span>2nd</span> Call the function:</p>
-<pre><code>key('your key', function() {
+            <p><span>2nd</span> Call <a href="https://github.com/yckart/jquery.key.js">key</a>:</p>
+<pre><code>$.key('your key', function() {
     // your function
 });</code></pre>
 
-            <p><span>3rd</span> Press <i>your key</i>!</p>
+            <p><span>3rd</span> Press <i>your key/s</i>!</p>
         </div>
 
         <div>
             <h3>Examples</h3>
             Press <span>ESC</span>
-<pre><code>key('esc', function() {
+<pre><code>$.key('esc', function() {
     alert('esc');
 });</code></pre>
 
             Press <span>CTRL + C</span>
-<pre><code>key('ctrl c', function() {
-    alert('ctrl c');
+<pre><code>$.key('ctrl+c', function() {
+    alert('ctrl+c');
 });</code></pre>
-            
+
             Press <span>CTRL + SHIFT + A</span>
-<pre><code>key('ctrl shift a', function() {
-    alert('ctrl shift a');
+<pre><code>$(document).key('ctrl+shift+a', function() {
+    alert('ctrl+shift+a');
 });</code></pre>
         </div>
 
         <div>
             <h3>Download</h3>
             <p>
-                Get the <a href='https://raw.github.com/yckart/key.js/master/key.js'>raw</a> script, download the complete <a href='https://github.com/yckart/key.js/zipball/master'>package</a> or fork it on <a href='https://github.com/yckart/key.js/fork_select'>GitHub</a>.
+                Get the <a href='https://raw.github.com/yckart/jquery.key.js/master/jquery.key.js'>raw</a> script, download the complete <a href='https://github.com/yckart/jquery.key.js/zipball/master'>package</a> or fork it on <a href='https://github.com/yckart/jquery.key.js'>GitHub</a>.
             </p>
         </div>
 
@@ -97,19 +98,26 @@
             </tt>
         </div>
 
-        <script src='key.js'></script>
+        <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+        <script src='jquery.key.js'></script>
         <script>
-            key("esc", function() {
+            $.key("esc", function() {
                 alert("esc");
             });
 
-            key("ctrl c", function() {
-                alert('ctrl c');
+            $.key("ctrl+c", function() {
+                alert('ctrl+c');
             });
 
-            key("ctrl shift a", function() {
-                alert("ctrl shift a");
+            $(document).key("ctrl+shift+a", function() {
+                alert("ctrl+shift+a");
             });
+
+            $(window).on('resize', function(){
+                $('.logo').css({
+                    fontSize: Math.max(Math.min($(window).outerWidth() / (1 * 6), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY))
+                });
+            }).resize();
         </script>
     </body>
 </html>
