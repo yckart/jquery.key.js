@@ -13,9 +13,11 @@
 
         var i = 0,
             cache = [];
+        var Keydown_Event = "keydown.Shortcut" + code.replace(/\+/,'_');
+        var Keyup_Event   = "keyup.Shortcut" + code.replace(/\+/,'_');
 
-        return this.on({
-            keydown: function (e) {
+
+        this.off(Keydown_Event).on(Keydown_Event, function (e) {
                 var key = e.which;
                 if (cache[cache.length - 1] === key) return;
                 cache.push(key);
@@ -25,11 +27,13 @@
                     fn(e, cache);
                     i = 0;
                 }
-            },
-            keyup: function () {
-                i = 0;
+            });
+
+        this.off(Keyup_Event).on(Keyup_Event, function (e) {
+                i     = 0;
                 cache = [];
-            }
         });
+
+        return this;
     };
 })(jQuery, document);
