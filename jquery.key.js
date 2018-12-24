@@ -14,8 +14,8 @@
         var i = 0,
             cache = [];
 
-        return this.on({
-            keydown: function (e) {
+        return this.off("keydown.Shortcut keyup.Shortcut").on({
+            "keydown.Shortcut": function (e) {
                 var key = e.which;
                 if (cache[cache.length - 1] === key) return;
                 cache.push(key);
@@ -26,7 +26,7 @@
                     i = 0;
                 }
             },
-            keyup: function () {
+            "keyup.Shortcut": function () {
                 i = 0;
                 cache = [];
             }
